@@ -1,0 +1,100 @@
+.example-card {
+  max-width: 100%;
+  height: 920px;
+  padding-top: 0;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+/* mat-card { */
+/* background: lightblue; */
+/* } */
+
+.mat-card-image-lg {
+  width: calc(65% + 40px);
+  margin: 0 -24% -0 -24%;
+  position: relative;
+  padding-left: 30px;
+  right: 86px;
+}
+
+.mat-card-image-sm-md {
+  width: calc(50% + 40px);
+  margin: 0 -24% 4% 20%;
+  border-radius: 50%;
+}
+
+.div-mat-card-img {
+  margin: 25px auto;
+  width: max-content;
+}
+
+:host ::ng-deep .mat-card-image {
+  width: calc(60% + 32px);
+  margin: -55px -16px;
+}
+
+.xs-paragraph {
+  /* white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; */
+}
+
+.header {
+  margin: 0 auto;
+  width: 269px;
+}
+
+.content {
+  height: 87%;
+  margin: 0px 6%;
+}
+
+.content-list {
+  height: 100%;
+}
+
+.content-row1-col2 {
+  height: 58% !important;
+}
+
+.content-row2-col1 {
+  height: 21% !important;
+}
+
+.content-list-tile-md {
+  height: 75%;
+}
+
+.content-list-tile-xs {
+  height: 75%;
+}
+
+:host ::ng-deep .mat-figure {
+  align-items: baseline;
+}
+
+.mat-grid-tile-p-xs {
+  font-size: 1.25rem;
+}
+
+.mat-card-title {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+:host ::ng-deep .mat-card {
+  background: #40404040;
+  /* background: black; */
+}
+
+.bio-tabs {
+  float: left;
+  margin: 13px -1px;
+  width: 25%;
+  height: 60px;
+  border: solid 2px #504f4f;
+}

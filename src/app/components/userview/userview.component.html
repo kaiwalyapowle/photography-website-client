@@ -1,0 +1,52 @@
+<div>
+  <div id="slideshow" class="background">
+    <app-slideshow></app-slideshow>
+  </div>
+  <div id="bio" class="background">
+    <app-bio (readMore)="addBioRow()"></app-bio>
+  </div>
+  <div *ngFor="let catalogue of catalogues" class="catalogue background">
+    <app-catalogue [catalogue]="catalogue" id="{{catalogue.catalogueName}}"></app-catalogue>
+  </div>
+  <div id="videos" class="catalogue background">
+    <app-videos></app-videos>
+  </div>
+  <div id="blogs" class="background">
+    <app-blogs></app-blogs>
+  </div>
+  <!-- <div class="background">
+    <app-awards></app-awards>
+  </div> -->
+  <!-- <div id="bts" class="background">
+    <app-bts></app-bts>
+  </div> -->
+</div>
+
+
+<!-- <mat-grid-list cols="1" rowHeight="{{adjustRowHeight}}" gutterSize="0">
+  <mat-grid-tile [rowspan]="adjustSlideshowRowspan">
+    <app-slideshow></app-slideshow>
+  </mat-grid-tile>
+  <mat-grid-tile [rowspan]="adjustBioRowspan">
+    <div class="div-uncollapse">
+      <app-bio (readMore)="addBioRow()"></app-bio>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile *ngFor="let catalogue of catalogues" [rowspan]="adjustSlideshowRowspan">
+    <div class="div-uncollapse">
+      <app-catalogue [catalogue]="catalogue"></app-catalogue>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [rowspan]="2" style="background: blue;">
+    <app-videos></app-videos>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <app-blogs></app-blogs>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <app-awards></app-awards>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <app-bts></app-bts>
+  </mat-grid-tile>
+</mat-grid-list> -->

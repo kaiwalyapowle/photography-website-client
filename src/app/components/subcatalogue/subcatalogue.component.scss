@@ -1,0 +1,51 @@
+.subcatalogue {
+  max-width: 400px;
+  max-height: 220px;
+}
+
+.image {
+  width: 100%;
+  height: 66.66%;
+  // height: 283px;
+  opacity: 1;
+  transition: 0.5s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.middle {
+  width: 100%;
+  // margin: 0 50%;
+  transition: 0.5s ease;
+  opacity: 1;
+  /* position: absolute; */
+  /* top: 87%; */
+  /* left: 44.5%; */
+  // -webkit-transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
+  // -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  position: relative;
+  bottom: 75px;
+}
+
+.text {
+  background-color: #5858588a;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.image:hover {
+  opacity: 0.6;
+}
+
+.image:hover .middle {
+  opacity: 0;
+}
+
+.div-frame {
+  // border: solid 16px white;
+  height: 312px;
+  // box-shadow: 1px 1px 1px 1px grey;
+}

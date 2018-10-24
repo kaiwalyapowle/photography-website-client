@@ -1,0 +1,8 @@
+<!--Carousel Wrapper-->
+<mdb-carousel [isControls]="true" [animation]="'slide'">
+    <!--First slide-->
+    <mdb-slide *ngFor="let file of files | async">
+        <img class="d-block w-100" src="{{file}}" alt="First slide">
+    </mdb-slide>
+</mdb-carousel>
+<!--/.Carousel Wrapper-->

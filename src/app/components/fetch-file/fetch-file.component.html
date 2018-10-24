@@ -1,0 +1,7 @@
+<div class="panel panel-primary">
+  <div *ngFor="let file of files | async">
+    <img src='{{file}}' />
+    <!-- <div class="panel-body">
+        <app-details [fileUpload]='file'></app-details>
+      </div> -->
+  </div>

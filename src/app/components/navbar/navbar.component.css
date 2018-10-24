@@ -1,0 +1,29 @@
+.nav-wrapper {
+  background-color: black !important;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav ul a:hover {
+  background-color: #151515;
+}
+
+:host ::ng-deep .navbar {
+  height: 40px !important;
+  padding: 0rem 1rem !important;
+}
+
+a {
+  letter-spacing: 2px;
+  color: white !important;
+}
+
+:host ::ng-deep .dropdown-menu {
+  background: #313030;
+  top: -9px;
+}
+
+:host ::ng-deep .dropdown-item:hover {
+  background: #0435e852;
+  top: -9px;
+}

@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+@import "~@angular/material/theming";
+
+@import "../node_modules/ng-masonry-grid/ng-masonry-grid.css";
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+// $body-1: mat-typography-level(15px, 32px, 300)
+$custom-typography: mat-typography-config(
+  $font-family: "Roboto, monospace",
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 160%, 300)
+);
+
+@include angular-material-typography($custom-typography);
+
+.mat-sidenav-container,
+.mat-sidenav-content,
+.mat-tab-body-content {
+  transform: none !important;
+}
+
+h1,
+h2,
+h3,
+p,
+i {
+  letter-spacing: 2px;
+  color: white;
+  // color: #8a8989;
+  text-align: justify;
+}
+
+hr {
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+  border-top: 1px solid rgba(138, 137, 137, 1);
+}
+
+.py-5 {
+  padding-bottom: 0 !important;
+}
+
+.section-width {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.navbar-brand {
+  margin-bottom: 0 !important;
+  font-size: 1.35rem !important;
+}
+
+.dialog-backdrop {
+  background: #0a0a0abf;
+}

@@ -1,0 +1,6 @@
+<div class="mat-typography" style="    height: 100%;">
+  <app-component-title [title]="title"></app-component-title>
+  <div *ngFor="let content of awards_publishedwork_contents">
+    <app-thumbnail-card [title]="content.title" [panelName]="content.panelName" [description]="content.description"></app-thumbnail-card>
+  </div>
+</div>

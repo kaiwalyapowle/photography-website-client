@@ -1,0 +1,55 @@
+:host ::ng-deep .buttons-container {
+  height: 28px;
+  position: relative;
+  left: 2200%;
+}
+
+:host ::ng-deep .inside {
+  max-height: 100vh !important;
+}
+
+// :host ::ng-deep #modal-gallery-wrapper {
+//   top: -110px !important;
+// }
+
+// :host ::ng-deep .ng-overlay {
+//   top: -110px !important;
+// }
+
+:host ::ng-deep .grid {
+  margin: 4.4% !important;
+}
+
+:host ::ng-deep #modal-gallery-container {
+  flex-direction: unset !important;
+}
+
+:host ::ng-deep .previews-container {
+  position: absolute !important;
+  flex-direction: column !important;
+  right: 90%;
+  background: #48484899;
+  height: 90%;
+  border: 2px solid white;
+}
+
+:host ::ng-deep .preview-image {
+  margin-bottom: 0px;
+  height: 62px !important;
+  width: 140px !important;
+}
+
+:host ::ng-deep .right-arrow-preview-image {
+  transform: rotate(90deg);
+}
+
+:host ::ng-deep .left-arrow-preview-image {
+  transform: rotate(90deg);
+}
+
+:host ::ng-deep ng-masonry-grid-item {
+  -webkit-transform: none;
+  transform: none;
+  -webkit-animation: unset;
+  animation: unset;
+}

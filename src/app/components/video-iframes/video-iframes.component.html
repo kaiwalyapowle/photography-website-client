@@ -1,0 +1,65 @@
+<mat-card class="example-card">
+  <!-- <mat-card-header class="header">
+    <mat-card-title>
+      <h1 class="navbar-brand">{{videoCategory}}</h1>
+    </mat-card-title>
+  </mat-card-header> -->
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="600px">
+      <mat-grid-tile *ngFor="let url of iframeUrls" [colspan]="1" [rowspan]="1">
+
+
+        <mat-card class="example-card" color="primary">
+          <div class="resp-container">
+            <iframe class="resp-iframe" [src]="url | safe" frameborder="0" allowfullscreen style="float: left;"></iframe>
+          </div>
+          <mat-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small,
+              agile dog that copes
+              very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary">LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+
+
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>
+
+
+
+
+<!-- <app-component-title [title]="videoCategory">
+</app-component-title>
+
+
+<mat-grid-list cols="2" rowHeight="600px">
+  <mat-grid-tile *ngFor="let url of iframeUrls" [colspan]="1" [rowspan]="1">
+
+
+    <mat-card class="example-card" color="primary">
+      <div class="resp-container">
+        <iframe class="resp-iframe" [src]="url | safe" frameborder="0" allowfullscreen style="float: left;"></iframe>
+      </div>
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+          very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+
+  </mat-grid-tile>
+</mat-grid-list> -->
+

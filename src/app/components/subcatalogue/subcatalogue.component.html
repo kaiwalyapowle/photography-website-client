@@ -1,0 +1,20 @@
+<!-- <div class="col-md subcatalogue">
+  <div class="card view zoom waves-light" mdbWavesEffect>
+    <a [routerLink]="['/gallery', panel]" routerLinkActive="active">
+      <img class="img-fluid" src="{{thumbnail}}" alt="">
+    </a>
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>[queryParams]="{ subcategory: subcategory }"
+    </div>
+  </div>
+</div>  -->
+<div class="div-frame">
+  <a [routerLink]="['/gallery', panel]" routerLinkActive="active">
+    <img src="{{ thumbnail }}" alt="" width="100%" class="image">
+  </a>
+  <div class="middle" *ngIf="thumbnail">
+    <div class="text">{{galleryName}}</div>
+  </div>
+</div>

@@ -1,0 +1,155 @@
+.catalogue {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.catalogue-description {
+  font-size: 1rem;
+  margin-left: 70px;
+  margin-right: 70px;
+  // margin-top: 36px;
+  margin-top: -70px;
+  margin-bottom: 36px;
+}
+
+.catalogue-content {
+  position: relative;
+  padding: 0px 11%;
+  height: 312px;
+}
+.catalogue-margin-left {
+  margin-left: 5%;
+}
+
+:host ::ng-deep .carousel-indicators {
+  display: none !important;
+}
+
+:host ::ng-deep .fa-chevron-left {
+  position: relative;
+  top: 125px;
+  left: 42px;
+  font-size: 22px;
+}
+
+:host ::ng-deep .fa-chevron-right {
+  position: relative;
+  top: 125px;
+  left: 1263px;
+  font-size: 22px;
+}
+
+:host ::ng-deep .slick-arrow {
+  display: none;
+  // height: 40px;
+  // width: 40px;
+  // color: black;
+  // background: black;
+}
+
+.container {
+  cursor: pointer;
+  position: relative;
+  width: 50%;
+  padding-right: 5.5px;
+  padding-left: 5.5px;
+}
+
+.slick-arrow-custom {
+  font-size: 60px !important;
+  height: 60px !important;
+  width: 60px !important;
+  cursor: pointer !important;
+  color: grey !important;
+}
+
+.slick-prev-custom,
+.slick-next-custom {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.slick-prev-custom {
+  left: 60px;
+}
+
+.slick-next-custom {
+  right: 60px;
+}
+
+//============================= subcatalogue css=================================//
+.subcatalogue {
+  max-width: 400px;
+  max-height: 220px;
+}
+
+.image {
+  width: 100%;
+  height: 66.66%;
+  // height: 283px;
+  opacity: 1;
+  transition: 0.5s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.middle {
+  width: 100%;
+  // margin: 0 50%;
+  transition: 0.5s ease;
+  opacity: 1;
+  /* position: absolute; */
+  /* top: 87%; */
+  /* left: 44.5%; */
+  // -webkit-transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
+  // -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  position: relative;
+  bottom: 75px;
+}
+
+.text {
+  background-color: #5858588a;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.image:hover {
+  opacity: 0.6;
+}
+
+.image:hover .middle {
+  opacity: 0;
+}
+
+.div-frame {
+  // border: solid 16px white;
+  height: 312px;
+  // box-shadow: 1px 1px 1px 1px grey;
+}
+
+//============================= video iframe css=================================//
+.resp-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

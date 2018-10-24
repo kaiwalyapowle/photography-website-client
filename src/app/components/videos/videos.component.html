@@ -1,0 +1,57 @@
+<!-- <div class="mat-typography" style="    height: 100%;">
+    <app-component-title [title]="'Films'"></app-component-title> -->
+
+<!-- temporarily merging both categories together. Further after more videos are added, categories will be added again-->
+<!-- <app-video-iframes [urls]="temp_allUrls" [category]="'Documentaries'"></app-video-iframes> -->
+<!-- <app-video-iframes [urls]="documentaryUrls" [category]="'Documentaries'"></app-video-iframes>
+    <app-video-iframes [urls]="marketingAndAdvertisingUrls" [category]="'Marketing and Advertising'"></app-video-iframes> -->
+<!-- </div> -->
+
+
+
+<div class="mat-typography" color="primary">
+    <app-component-title [title]="'Films'"></app-component-title>
+    <div class="catalogue-content">
+        <!-- You can now use your library component in app.component.html -->
+        <i class="material-icons slick-arrow-custom slick-prev-custom" (click)="slickModal.slickPrev()">
+            keyboard_arrow_left
+        </i>
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+            <!-- <div *ngFor="let catalogueContent of catalogueContents"> -->
+            <div ngxSlickItem *ngFor="let url of temp_allUrls" class="slide container">
+                <div class="div-frame">
+                    <!-- <a [routerLink]="['/gallery', panel]" routerLinkActive="active"> -->
+                    <iframe class="image" [src]="url | safe" frameborder="0" allowfullscreen style="float: left;"></iframe>
+                    <!-- </a> -->
+
+                </div>
+            </div>
+            <!-- </div> -->
+        </ngx-slick>
+        <i class="material-icons slick-arrow-custom slick-next-custom" (click)="slickModal.slickNext()">
+            keyboard_arrow_right
+        </i>
+    </div>
+    <!-- <p *ngIf="currentScreenSize === 'xs'" class="catalogue-description">{{catalogue.description_xs}}</p> -->
+    <p class="catalogue-description">lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+        lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+        lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit amet</p>
+
+</div>
+<!-- style="position: relative;
+    bottom: 191px; width: 5%;"> -->
+<!-- <button (click)="addSlide()">Add</button>
+      <button (click)="removeSlide()">Remove</button> -->
+<!-- <button (click)="slickModal.slickPrev()">Prev</button> -->
+<!-- </div> -->
+<!-- <div style="position: relative;
+    bottom: 288px;
+    left: 1259px;
+    width: 0;"> -->
+<!-- <div> -->
+<!-- <button (click)="slickModal.slickNext()">Next</button> -->
+<!-- <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+      <button (click)="slickModal.unslick()">unslick</button> -->
+<!-- </div> -->
+
+<!--Carousel Wrapper *ngFor="let gallery of contentObj.galleryName"-->

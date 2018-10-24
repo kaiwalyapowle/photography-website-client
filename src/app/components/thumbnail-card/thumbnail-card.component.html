@@ -1,0 +1,25 @@
+<!-- <h1>Awards</h1> -->
+<mat-card class="example-card">
+  <mat-card-header class="header">
+    <mat-card-title>
+      <h1 class="navbar-brand">{{content_title}}</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-card class="example-card">
+      <div class="div-mat-card-img">
+        <!-- <app-gallery-modal [modalImages]="files"></app-gallery-modal> -->
+        <img *ngFor="let file of files | async" src="{{file}}" alt="" (click)="openDialog(file)">
+      </div>
+      <mat-card-content>
+        <p>
+          {{description}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

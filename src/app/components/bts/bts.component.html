@@ -1,0 +1,30 @@
+<div class="mat-typography" style="    height: 100%;">
+  <app-component-title [title]="'Behind the scenes'"></app-component-title>
+
+  <!-- <div *ngFor="let content of awards_publishedwork_contents">
+    <app-thumbnail-card [title]="content.title" [panelName]="content.panelName" [description]="content.description"></app-thumbnail-card>
+  </div> -->
+
+
+
+  <mat-card class="example-card">
+
+    <ng-masonry-grid [masonryOptions]="{transitionDuration: '0s', gutter: 1 }" [useAnimation]="false"
+      [useImagesLoaded]="true" [scrollAnimationOptions]="{ animationEffect: 'effect-1', minDuration : 0, maxDuration : 0, viewportFactor : 0 }">
+      <!-- Masonry Grid Item -->
+      <ng-masonry-grid-item id="{{'masonry-item-'+i}}" *ngFor="let file of files | async; let i = index;">
+        <!-- Grid Content  -->
+        <img src="{{file}}" alt="">
+      </ng-masonry-grid-item>
+    </ng-masonry-grid>
+
+
+    <!-- <div class="div-mat-card-img">
+      <img *ngFor="let file of files | async" src="{{file}}" alt="" style="float: left; width: 30%;">
+    </div> -->
+    <mat-card-actions>
+      <button mat-raised-button color="primary">LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
