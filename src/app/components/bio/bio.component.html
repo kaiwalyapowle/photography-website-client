@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card class="container-card">
 
 
     <mat-card-content class="content" *ngIf="currentScreenSize === 'lg'; else verticalCardContent">
@@ -8,24 +8,18 @@
                 <mat-card-header class="header">
                     <!-- <div mat-card-avatar class="example-header-image"></div> -->
                     <mat-card-title>
-                        <h1 style="    margin-bottom: 7px;
-                        font-size: 2.05rem;
-                        margin-left: -88px;">SAEE
+                        <h1 class="title">SAEE
                             BHURKE</h1>
                     </mat-card-title>
                     <mat-card-subtitle>
-                        <div style="    color: white;
-                        width: 234px;
-                        text-align: -webkit-center;
-                        margin: 0 -87px;
-                        letter-spacing: 2px;">Natural
+                        <div class="subtitle">Natural
                             History & Travel Photographer</div>
                     </mat-card-subtitle>
                 </mat-card-header>
-                <img class="mat-card-image-lg" src="{{file}}" alt="Photo of a Shiba Inu">
+                <img class="mat-card-image-lg" src="{{file}}" alt="Saee Bhurke">
             </mat-grid-tile>
             <mat-grid-tile class="content-row1-col2" [colspan]="1" [rowspan]="1">
-                <p style="font-size: 13.5px;">
+                <p class="para">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blessed with the power of imagination, strong will,
                     and an ability to adapt to any situation, Saee has carved a place for herself in a short span of
                     time in the field of photography.
@@ -53,7 +47,7 @@
                 </p>
             </mat-grid-tile>
             <mat-grid-tile class="content-row2-col1" [colspan]="2" [rowspan]="0.1">
-                <p style="font-size: 13.5px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="para"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     Many of her Wildlife, Travel and Commercial photography works are published in International and
                     National magazines, Coffee Table books, e-magazines and other media like “Natgeo Traveller” “Condè
@@ -67,82 +61,72 @@
                     activities!</p>
             </mat-grid-tile>
 
-            <!-- <mat-grid-tile class="content-list-tile-lg" [colspan]="1">
-                <p class="mat-body-1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </p>
-            </mat-grid-tile> -->
         </mat-grid-list>
 
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-button>ACHIEVEMENTS</button>
-        <button mat-button>BEHIND THE LENS</button>
-        <button mat-button>ASSOCIATIONS</button>
-        <button mat-button>CLIENTS</button>
-    </mat-card-actions>
-    <!-- <div>
-        <div class="bio-tabs"><h5>ACHIEVEMENTS</h5></div>
-        <div class="bio-tabs"><h5>BEHIND THE LENS</h5></div>
-        <div class="bio-tabs"><h5>ASSOCIATIONS</h5></div>
-        <div class="bio-tabs"><h5>CLIENTS</h5></div>
-    </div> -->
-    <!-- <mat-grid-list cols="2" rowHeight="550px">
-        <mat-grid-tile [colspan]="2" [rowspan]="0.1">
 
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="2" [rowspan]="0.1">
+    <div class="tab">
 
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="2" [rowspan]="0.1">
+        <a [routerLink]="['/gallery', 'awards']" [queryParams]="{isTree: false}" routerLinkActive="active">
+            <button mat-stroked-button class="tab-btn">ACHIEVEMENTS</button>
+        </a>
 
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="2" [rowspan]="0.1">
+        <a [routerLink]="['/gallery', 'bts']" [queryParams]="{isTree: false}" routerLinkActive="active">
+            <button mat-stroked-button class="tab-btn">BEHIND THE LENS</button>
+        </a>
 
-        </mat-grid-tile>
+        <!-- <a [routerLink]="['/gallery', panel]" routerLinkActive="active"> -->
+        <button mat-stroked-button class="tab-btn">ASSOCIATIONS</button>
+        <!-- </a> -->
 
-    </mat-grid-list> -->
+        <!-- <a [routerLink]="['/gallery', panel]" routerLinkActive="active"> -->
+        <button mat-stroked-button class="tab-btn">CLIENTS</button>
+        <!-- </a> -->
+
+    </div>
     <ng-template #verticalCardContent>
         <div>
             <div class="div-mat-card-img">
-                <img mat-card-xl-image src="{{file}}" alt="Photo of a Shiba Inu">
+                <img mat-card-xl-image src="{{file}}" alt="Saee Bhurke">
             </div>
             <div>
                 <p class="mat-body-1 mat-grid-tile-p-xs">
-                    Born in the family of businessmen in Photography Services in Pune for past 3 generations, it was
-                    natural for Saee to get
-                    into Photography. But only after she started playing with the camera at the age of 17, did she
-                    realize
-                    that her dream for traveling the world and love for exploring the Nature can both be fulfilled
-                    through
-                    her passion for Photography. By the time she was 19 she had started taking proper training and
-                    mentoring
-                    from Fine Art landscape photographer Lalit Deshmukh, during her graduation studies.
+                    Blessed with the power of imagination, strong will,
+                    and an ability to adapt to any situation, Saee has carved a place for herself in a short span of
+                    time in the field of photography.
+                    Saee is a dedicated and passionate Natural History and Travel Photographer based in Pune, India.
+                    Her photographs exhibit Minimalistic and Creative aspects from all over the Planet Earth.
+                    By the age of 17, she had realized her dream and passion for traveling the world and love for
+                    exploring nature. Since then she’s set to fulfil her passion with Photography, received as family
+                    legacy and has taken her everywhere from the pristine Himalayan Mountains to scenic beaches, from
+                    the untouched jungles to bustling towns and culture-rich villages, to witness and record the unique
+                    phenomenons.
+                    By the time she was 19, she had started taking professional training and mentoring from Fine Art
+                    Landscape Photographer Lalit Deshmukh, during her graduation studies.
+                    Soon after Saee started training with Lalit Deshmukh, she joined as a photography mentor at
+                    Impressions Photography Workshops and Expeditions since
+                    2012 where she leads Photography Workshops and genre based photography tours within India and
+                    abroad.
+                    Till today, she has trained more than 500 students in the 7 years and also is a visiting faculty
+                    and lecturer for Architectural Photography in Bharati Vidyapeeth Architectural College and for
+                    Basic Nature Photography in M. E. S. Community college, both based in Pune.
+                    Saee provides commercial photography services with an experience of 4 years, mainly in
+                    Architectural - Travel, Products, Industrial, Fashion, Lifestyle and Advertising photography
+                    Services. Maintaining the highest quality of organised work is the top priority in her photography
+                    services.
+                    Saee’s devotion to photography and the quality of her work speak for themselves.
+                    Many of her Wildlife, Travel and Commercial photography works are published in International and
+                    National magazines, Coffee Table books, e-magazines and other media like “Natgeo Traveller” “Condè
+                    Nast
+                    Traveller”, “ Madhya Pradesh Tourism “ etc. and also have won National level awards like “Sanctuary
+                    Asia” , “ Frames of India “ , etc.
+                    Saee is also a documentary filmmaker and has worked as a Cinematographer and Editor for 5 projects
+                    since 2013.
+                    Saee is willing to utilize her On field experience, Researches, Filmmaking and Photography skills
+                    more to contribute to the various branches of Nature Conservation movements and World Exploration
+                    activities!
                 </p>
             </div>
         </div>
     </ng-template>
-    <!-- <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-    </mat-card-actions> -->
 </mat-card>
-<!-- <mat-divider></mat-divider> -->
-<!-- <mat-card-content>
-            <mat-grid-list cols="1" rowHeight="5.75:2">
-                <mat-grid-tile [colspan]="1" [rowspan]="3">
-                    <img mat-card-image src="{{file}}" alt="Photo of a Shiba Inu">
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="xsContentRowSpan">
-                    <p class="mat-body-1 mat-grid-tile-p-xs">
-                        Born in the family of businessmen in Photography Services in Pune for past 3 generations, it was natural for Saee to get
-                        into Photography. But only after she started playing with the camera at the age of 17, did she realize
-                        that her dream for traveling the world and love for exploring the Nature can both be fulfilled through
-                        her passion for Photography. By the time she was 19 she had started taking proper training and mentoring
-                        from Fine Art landscape photographer Lalit Deshmukh, during her graduation studies.
-                    </p>
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="0.5">
-                    <button mat-raised-button color="accent" (click)="readMoreBio()">{{readMoreBtnTxt}}</button>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </mat-card-content> -->

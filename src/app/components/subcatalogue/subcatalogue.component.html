@@ -11,7 +11,7 @@
   </div>
 </div>  -->
 <div class="div-frame">
-  <a [routerLink]="['/gallery', panel]" routerLinkActive="active">
+  <a [routerLink]="['/gallery', panel]" [queryParams]="{isTree: true}" routerLinkActive="active">
     <img src="{{ thumbnail }}" alt="" width="100%" class="image">
   </a>
   <div class="middle" *ngIf="thumbnail">

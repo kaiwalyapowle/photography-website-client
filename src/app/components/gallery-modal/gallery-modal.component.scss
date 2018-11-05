@@ -1,4 +1,4 @@
-:host ::ng-deep .mat-dialog-content {
+.mat-dialog-content {
   max-height: fit-content;
   padding: 0 0px;
   margin: -24px -24px;
@@ -7,4 +7,9 @@
 
 .img-dimensions {
   height: 600px;
+}
+
+.mat-dialog-container {
+  background: transparent;
+  box-shadow: none;
 }

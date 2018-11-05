@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FileLoaderService } from "../../services/file-loader.service";
 import { MediaChange, ObservableMedia } from "@angular/flex-layout";
+import { DataStoreService } from "src/app/services/data-store.service";
 
 @Component({
   selector: "app-bio",
@@ -8,8 +9,8 @@ import { MediaChange, ObservableMedia } from "@angular/flex-layout";
   styleUrls: ["./bio.component.css"]
 })
 export class BioComponent implements OnInit {
-  // files: Observable<string[]>
   panelName: string = "bio";
+  galleryPanels: string[] = ["awards", "bts"];
   file: string;
   activeMediaQuery = "";
   currentScreenSize: string = "";
@@ -25,11 +26,18 @@ export class BioComponent implements OnInit {
 
   constructor(
     private fileLoaderService: FileLoaderService,
-    private media: ObservableMedia
+    private media: ObservableMedia,
+    private datastoreService: DataStoreService
   ) {
     this.fileLoaderService.getFiles(this.panelName).subscribe(files => {
       this.file = files[0];
     });
+
+    for (let panel of this.galleryPanels) {
+      this.fileLoaderService.getFiles(panel).subscribe(files => {
+        datastoreService.setFiles(panel, files);
+      });
+    }
 
     media.subscribe((change: MediaChange) => {
       this.activeMediaQuery = change

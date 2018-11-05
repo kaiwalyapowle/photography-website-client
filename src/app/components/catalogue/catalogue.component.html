@@ -1,7 +1,7 @@
-<div class="mat-typography" color="primary">
+<div color="primary">
   <app-component-title [title]="catalogue.catalogueName"></app-component-title>
   <div class="catalogue-content">
-    <!-- You can now use your library component in app.component.html -->
+    <!-- class="mat-typography" You can now use your library component in app.component.html -->
     <i class="material-icons slick-arrow-custom slick-prev-custom" (click)="slickModal.slickPrev()">
       keyboard_arrow_left
     </i>
@@ -17,7 +17,7 @@
     </i>
   </div>
   <!-- <p *ngIf="currentScreenSize === 'xs'" class="catalogue-description">{{catalogue.description_xs}}</p> -->
-  <p class="catalogue-description">{{catalogue.description_lg}}</p>
+  <!-- <p class="catalogue-description">{{catalogue.description_lg}}</p> -->
 
 </div>
 <!-- style="position: relative;

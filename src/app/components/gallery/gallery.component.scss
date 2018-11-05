@@ -53,3 +53,19 @@
   -webkit-animation: unset;
   animation: unset;
 }
+
+.tab-btn {
+  text-transform: uppercase;
+  float: left;
+  color: #929292;
+  margin: 0px 10px;
+  letter-spacing: 2px;
+}
+
+.tab-btn:hover {
+  color: white;
+}
+
+.tab-btn:focus {
+  color: #7085d2;
+}

@@ -11,6 +11,8 @@ import {
   GridLayout,
   LineLayout
 } from "@ks89/angular-modal-gallery";
+import { Masonry, MasonryGridItem } from "ng-masonry-grid";
+import { GalleryModalComponent } from "../gallery-modal/gallery-modal.component";
 
 @Component({
   selector: "app-gallery",
@@ -25,10 +27,12 @@ export class GalleryComponent implements OnInit {
     public dialog: MatDialog
   ) {}
 
+  _masonry: Masonry;
   galleryNames: string[];
   panelName: string;
   all_image_objects: Object[] = [];
   flexible_only_images: string[] = [];
+  isTree: string = "true";
   // plainGalleryGrid: PlainGalleryConfig = {
   //   strategy: PlainGalleryStrategy.GRID,
   //   layout: new GridLayout(
@@ -52,47 +56,110 @@ export class GalleryComponent implements OnInit {
       this.galleryNames = this.dataStoreService.getFiles(this.panelName);
     });
 
-    for (let galleryName of this.galleryNames) {
-      if (!galleryName.includes("_Thumbnail")) {
-        this.fileLoaderService
-          .getFilesTree(this.panelName, galleryName)
-          .subscribe(fileArray => {
-            // let images: Image[] = [];
+    this.route.queryParams.subscribe(paramsObj => {
+      this.isTree = paramsObj["isTree"];
+      if (this.isTree == "true") {
+        for (let galleryName of this.galleryNames) {
+          if (!galleryName.includes("_Thumbnail")) {
+            this.fileLoaderService
+              .getFilesTree(this.panelName, galleryName)
+              .subscribe(fileArray => {
+                // let images: Image[] = [];
 
-            for (let i = 0; i < fileArray.length; i++) {
-              this.flexible_only_images.push(fileArray[i]);
-              // images.push(
-              //   new Image(i, {
-              //     // modal
-              //     img: fileArray[i],
-              //     description: "Description 2",
-              //     title: galleryName,
-              //     alt: "custom alt 2"
-              //   })
-              // );
-              this.all_image_objects.push({
-                id: i,
-                img: fileArray[i],
-                galleryName: galleryName
+                for (let i = 0; i < fileArray.length; i++) {
+                  this.flexible_only_images.push(fileArray[i]);
+                  // images.push(
+                  //   new Image(i, {
+                  //     // modal
+                  //     img: fileArray[i],
+                  //     description: "Description 2",
+                  //     title: galleryName,
+                  //     alt: "custom alt 2"
+                  //   })
+                  // );
+                  this.all_image_objects.push({
+                    id: i,
+                    img: fileArray[i],
+                    galleryName: galleryName
+                  });
+                }
+                this.dataStoreService.setFiles(galleryName, fileArray);
               });
-            }
-            this.dataStoreService.setFiles(galleryName, fileArray);
-          });
+          }
+        }
+      } else {
+        for (let galleryImage of this.galleryNames) {
+          this.addItems(galleryImage);
+        }
       }
-    }
+    });
+  }
+
+  // Get ng masonry grid instance first
+  onNgMasonryInit($event: Masonry) {
+    this._masonry = $event;
   }
 
   chosenGallery(galleryName: string) {
-    this.flexible_only_images = [];
+    // this.flexible_only_images = [];
+    this.removeAllItems();
 
     for (let imageObj of this.all_image_objects) {
       if (imageObj["galleryName"] == galleryName) {
-        this.flexible_only_images.push(imageObj["img"]);
+        // this.flexible_only_images.push(imageObj["img"]);
+        this.addItems(imageObj["img"]);
+        // this.appendItems(imageObj["img"]);
       } else if (galleryName == "All") {
-        this.flexible_only_images.push(imageObj["img"]);
+        this.addItems(imageObj["img"]);
+        // this.appendItems(imageObj["img"]);
+        // this.flexible_only_images.push(imageObj["img"]);
       }
     }
+    // this._masonry.reloadItems();
+    console.log("gallery :: flexible only images" + this.flexible_only_images);
+  }
 
-    console.log(this.flexible_only_images);
+  addItems(img: string) {
+    // time out is given because removeAllItems promise takes long to get executed. Hence items get added before getting removed
+    setTimeout(() => {
+      if (this._masonry) {
+        this._masonry.setAddStatus("add"); // set status to 'add'
+        this.flexible_only_images.push(img);
+      }
+    }, 1000);
+  }
+
+  // Append items to NgMasonryGrid
+  appendItems(img: string) {
+    if (this._masonry) {
+      // Check if Masonry instance exists
+      this._masonry.setAddStatus("append"); // set status to 'append'
+      this.flexible_only_images.push(img); // some grid items: items
+    }
+  }
+
+  // Remove all items from NgMasonryGrid
+  removeAllItems() {
+    if (this._masonry) {
+      this._masonry.removeAllItems().subscribe((items: MasonryGridItem) => {
+        // remove all items from the list
+        this.flexible_only_images = [];
+      });
+    }
+  }
+
+  openDialog(imageArray: string[], index: number): void {
+    const dialogRef = this.dialog.open(GalleryModalComponent, {
+      height: "600px",
+      hasBackdrop: true,
+
+      data: { title: "", imageArray: imageArray, selectedImageIndex: index },
+      backdropClass: "dialog-backdrop"
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("The dialog was closed");
+      // this.animal = result;
+    });
   }
 }

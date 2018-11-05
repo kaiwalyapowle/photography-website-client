@@ -8,23 +8,23 @@
 </div> -->
 <div style="position: relative;
 bottom: 48px;
-left: 150px;">
+left: 150px;
+width: 88%;" *ngIf="isTree == 'true'">
   <div *ngFor="let galleryName of galleryNames">
-    <button mat-stroked-button style="float:left;     margin: 0px 10px;" *ngIf="galleryName.includes('_Thumbnail')"
-      (click)="chosenGallery('All')">All</button>
-    <button mat-stroked-button style="float:left;     margin: 0px 10px;" *ngIf="!galleryName.includes('_Thumbnail')"
-      (click)="chosenGallery(galleryName)">{{galleryName}}</button>
+    <button mat-stroked-button class="tab-btn" *ngIf="galleryName.includes('_Thumbnail')" (click)="chosenGallery('All')">All</button>
+    <button mat-stroked-button class="tab-btn" *ngIf="!galleryName.includes('_Thumbnail')" (click)="chosenGallery(galleryName)">{{galleryName}}</button>
   </div>
 </div>
-<div style="    height: -webkit-fill-available;">
-  <ng-masonry-grid [masonryOptions]="{transitionDuration: '0.8s', gutter: 10}" [useAnimation]="false"
-    [useImagesLoaded]="true">
+<div>
+  <ng-masonry-grid [masonryOptions]="{transitionDuration: '0.8s', gutter: 10}" [useAnimation]="false" [useImagesLoaded]="true"
+    (onNgMasonryInit)="onNgMasonryInit($event)">
     <!-- Masonry Grid Item , horizontalOrder: true  [scrollAnimationOptions]="{ animationEffect: 'effect-1', minDuration : 0, maxDuration : 0, viewportFactor : 0 }"-->
     <ng-masonry-grid-item id="{{'masonry-item-'+i}}" *ngFor="let image of flexible_only_images; let i = index;">
       <!-- Grid Content  -->
-      <img src="{{image}}" alt="">
-      <!-- <ks-modal-gallery [id]="0" [modalImages]="thumbnail" [plainGalleryConfig]="plainGalleryRow" [dotsConfig]="{visible: false}"
-        [previewConfig]="{visible: true, number: 9}" [slideConfig]="{infinite: false, sidePreviews: {show: false}}"></ks-modal-gallery> -->
+      <img src="{{image}}" alt="" (click)="openDialog(flexible_only_images, i)" style="cursor:pointer">
+      <!-- <ks-modal-gallery [id]="0" [modalImages]="images"
+      [previewConfig]="{visible: false}"
+      [dotsConfig]="{visible: false}"></ks-modal-gallery> -->
     </ng-masonry-grid-item>
   </ng-masonry-grid>
 </div>
