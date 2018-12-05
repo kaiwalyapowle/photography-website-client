@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FileLoaderService } from "../../services/file-loader.service";
 import { Observable } from "rxjs";
-import { awards_publishedwork } from "../folder-structure/folder-structure.component";
+import { awards_publishedwork } from "../../components/folder-structure/folder-structure.component";
 
 @Component({
   selector: "app-awards",

@@ -4,13 +4,6 @@ import { DataStoreService } from "../../services/data-store.service";
 import { FileLoaderService } from "../../services/file-loader.service";
 import { MatDialog } from "@angular/material/dialog";
 
-import {
-  Image,
-  PlainGalleryConfig,
-  PlainGalleryStrategy,
-  GridLayout,
-  LineLayout
-} from "@ks89/angular-modal-gallery";
 import { Masonry, MasonryGridItem } from "ng-masonry-grid";
 import { GalleryModalComponent } from "../gallery-modal/gallery-modal.component";
 
@@ -28,55 +21,32 @@ export class GalleryComponent implements OnInit {
   ) {}
 
   _masonry: Masonry;
-  galleryNames: string[];
+  // Either gallery names will get stored or gallery images.
+  galleryNamesOrImages_isTree: string[];
   panelName: string;
   all_image_objects: Object[] = [];
   flexible_only_images: string[] = [];
   isTree: string = "true";
-  // plainGalleryGrid: PlainGalleryConfig = {
-  //   strategy: PlainGalleryStrategy.GRID,
-  //   layout: new GridLayout(
-  //     { width: "35%", height: "100%" },
-  //     { length: 1, wrap: true }
-  //   )
-  // };
-
-  plainGalleryRow: PlainGalleryConfig = {
-    strategy: PlainGalleryStrategy.ROW,
-    layout: new LineLayout(
-      { width: "100%", height: "100%" },
-      { length: -1, wrap: true },
-      "flex-start"
-    )
-  };
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramsObj => {
       this.panelName = paramsObj["params"]["panel"];
-      this.galleryNames = this.dataStoreService.getFiles(this.panelName);
+      this.galleryNamesOrImages_isTree = this.dataStoreService.getFiles(
+        this.panelName
+      );
     });
 
     this.route.queryParams.subscribe(paramsObj => {
       this.isTree = paramsObj["isTree"];
       if (this.isTree == "true") {
-        for (let galleryName of this.galleryNames) {
+        for (let galleryName of this.galleryNamesOrImages_isTree) {
           if (!galleryName.includes("_Thumbnail")) {
             this.fileLoaderService
               .getFilesTree(this.panelName, galleryName)
               .subscribe(fileArray => {
-                // let images: Image[] = [];
-
                 for (let i = 0; i < fileArray.length; i++) {
                   this.flexible_only_images.push(fileArray[i]);
-                  // images.push(
-                  //   new Image(i, {
-                  //     // modal
-                  //     img: fileArray[i],
-                  //     description: "Description 2",
-                  //     title: galleryName,
-                  //     alt: "custom alt 2"
-                  //   })
-                  // );
+
                   this.all_image_objects.push({
                     id: i,
                     img: fileArray[i],
@@ -88,7 +58,7 @@ export class GalleryComponent implements OnInit {
           }
         }
       } else {
-        for (let galleryImage of this.galleryNames) {
+        for (let galleryImage of this.galleryNamesOrImages_isTree) {
           this.addItems(galleryImage);
         }
       }
@@ -101,22 +71,15 @@ export class GalleryComponent implements OnInit {
   }
 
   chosenGallery(galleryName: string) {
-    // this.flexible_only_images = [];
     this.removeAllItems();
 
     for (let imageObj of this.all_image_objects) {
       if (imageObj["galleryName"] == galleryName) {
-        // this.flexible_only_images.push(imageObj["img"]);
         this.addItems(imageObj["img"]);
-        // this.appendItems(imageObj["img"]);
       } else if (galleryName == "All") {
         this.addItems(imageObj["img"]);
-        // this.appendItems(imageObj["img"]);
-        // this.flexible_only_images.push(imageObj["img"]);
       }
     }
-    // this._masonry.reloadItems();
-    console.log("gallery :: flexible only images" + this.flexible_only_images);
   }
 
   addItems(img: string) {
@@ -157,9 +120,34 @@ export class GalleryComponent implements OnInit {
       backdropClass: "dialog-backdrop"
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log("The dialog was closed");
-      // this.animal = result;
-    });
+    dialogRef.afterClosed().subscribe(result => {});
   }
 }
+
+// ======================ks-modal-gallery unused code=========================//
+// plainGalleryGrid: PlainGalleryConfig = {
+//   strategy: PlainGalleryStrategy.GRID,
+//   layout: new GridLayout(
+//     { width: "35%", height: "100%" },
+//     { length: 1, wrap: true }
+//   )
+// };
+
+// plainGalleryRow: PlainGalleryConfig = {
+//   strategy: PlainGalleryStrategy.ROW,
+//   layout: new LineLayout(
+//     { width: "100%", height: "100%" },
+//     { length: -1, wrap: true },
+//     "flex-start"
+//   )
+// };
+
+// images.push(
+//   new Image(i, {
+//     // modal
+//     img: fileArray[i],
+//     description: "Description 2",
+//     title: galleryName,
+//     alt: "custom alt 2"
+//   })
+// );

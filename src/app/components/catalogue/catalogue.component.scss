@@ -1,58 +1,7 @@
-.catalogue {
-  margin-left: 70px;
-  margin-right: 70px;
-}
-
-.catalogue-description {
-  font-size: 1rem;
-  margin-left: 70px;
-  margin-right: 70px;
-  // margin-top: 36px;
-  margin-top: -70px;
-  margin-bottom: 36px;
-}
-
 .catalogue-content {
   position: relative;
   padding: 0px 11%;
   height: 247px;
-}
-.catalogue-margin-left {
-  margin-left: 5%;
-}
-
-:host ::ng-deep .carousel-indicators {
-  display: none !important;
-}
-
-:host ::ng-deep .fa-chevron-left {
-  position: relative;
-  top: 125px;
-  left: 42px;
-  font-size: 22px;
-}
-
-:host ::ng-deep .fa-chevron-right {
-  position: relative;
-  top: 125px;
-  left: 1263px;
-  font-size: 22px;
-}
-
-:host ::ng-deep .slick-arrow {
-  display: none;
-  // height: 40px;
-  // width: 40px;
-  // color: black;
-  // background: black;
-}
-
-.container {
-  cursor: pointer;
-  position: relative;
-  width: 50%;
-  padding-right: 5.5px;
-  padding-left: 5.5px;
 }
 
 .slick-arrow-custom {
@@ -89,4 +38,43 @@
 
 .slick-next-custom {
   right: 60px;
+}
+
+.container {
+  cursor: pointer;
+  position: relative;
+  width: 50%;
+  padding-right: 5.5px;
+  padding-left: 5.5px;
+}
+
+.catalogue-description {
+  font-size: 1rem;
+  margin-left: 70px;
+  margin-right: 70px;
+  // margin-top: 36px;
+  margin-top: -70px;
+  margin-bottom: 36px;
+}
+
+:host ::ng-deep .carousel-indicators {
+  display: none !important;
+}
+
+:host ::ng-deep .fa-chevron-left {
+  position: relative;
+  top: 125px;
+  left: 42px;
+  font-size: 22px;
+}
+
+:host ::ng-deep .fa-chevron-right {
+  position: relative;
+  top: 125px;
+  left: 1263px;
+  font-size: 22px;
+}
+
+:host ::ng-deep .slick-arrow {
+  display: none;
 }

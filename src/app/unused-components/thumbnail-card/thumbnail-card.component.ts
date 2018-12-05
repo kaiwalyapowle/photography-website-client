@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Observable } from "rxjs";
 import { FileLoaderService } from "../../services/file-loader.service";
 import { MatDialog } from "@angular/material";
-import { GalleryModalComponent } from "../gallery-modal/gallery-modal.component";
+import { GalleryModalComponent } from "../../components/gallery-modal/gallery-modal.component";
 
 @Component({
   selector: "app-thumbnail-card",

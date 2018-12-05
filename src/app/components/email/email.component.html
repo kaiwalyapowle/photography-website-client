@@ -1,0 +1,59 @@
+<div style="margin-top: 80px; height: 400px;">
+  <form #formDetails="ngForm" (ngSubmit)="sendMail(formDetails)">
+    <mat-form-field style="display: flex;">
+      <input
+        matInput
+        placeholder="Full name"
+        required
+        id="fullName"
+        type="text"
+        ngModel
+        name="fullName"
+        #fullName="ngModel"
+      />
+    </mat-form-field>
+
+    <mat-form-field style="display: flex;">
+      <input
+        matInput
+        placeholder="Email address"
+        required
+        id="email"
+        type="email"
+        ngModel
+        name="email"
+        #email="ngModel"
+        email="true"
+      />
+    </mat-form-field>
+
+    <mat-form-field style="display: flex;">
+      <textarea
+        matInput
+        placeholder="Message"
+        id="message"
+        type="text"
+        ngModel
+        name="message"
+        #message="ngModel"
+      ></textarea>
+    </mat-form-field>
+
+    <!--
+      attachment feature not yet introduced
+      <input
+        style="display: none;"
+        id="attachmentFile"
+        name="attachmentFile"
+        type="file"
+        (change)="selectFiles($event)"
+      />
+ 
+      <a (click)="openFileBrowser($event)">
+        <i class="material-icons"> attach_file </i>
+      </a>
+    -->
+
+    <button mat-raised-button>SEND</button>
+  </form>
+</div>

@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { FetchFileComponent } from "./components/fetch-file/fetch-file.component";
@@ -32,12 +33,14 @@ import { VideosComponent } from "./components/videos/videos.component";
 import { VideoIframesComponent } from "./components/video-iframes/video-iframes.component";
 import { SafePipe } from "./pipes/safe.pipe";
 import { BlogsComponent } from "./components/blogs/blogs.component";
-import { AwardsComponent } from "./components/awards/awards.component";
-import { BtsComponent } from "./components/bts/bts.component";
+import { AwardsComponent } from "./unused-components/awards/awards.component";
+import { BtsComponent } from "./unused-components/bts/bts.component";
 import { ComponentTitleComponent } from "./components/component-title/component-title.component";
-import { ThumbnailCardComponent } from "./components/thumbnail-card/thumbnail-card.component";
+import { ThumbnailCardComponent } from "./unused-components/thumbnail-card/thumbnail-card.component";
 import { NgMasonryGridModule } from "ng-masonry-grid";
 import { FooterComponent } from './components/footer/footer.component';
+import { EmailComponent } from './components/email/email.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -62,12 +65,15 @@ import { FooterComponent } from './components/footer/footer.component';
     BtsComponent,
     ComponentTitleComponent,
     ThumbnailCardComponent,
-    FooterComponent
+    FooterComponent,
+    EmailComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
     CustomNgMaterialModule,

@@ -25,12 +25,15 @@ $custom-typography: mat-typography-config(
 h1,
 h2,
 h3,
+h4,
+h5,
 p,
 i {
   letter-spacing: 2px;
   color: white;
   // color: #8a8989;
   text-align: justify;
+  font-weight: 300 !important;
 }
 
 hr {

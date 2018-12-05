@@ -15,10 +15,12 @@ export class SubcatalogueComponent implements OnInit {
   @Input("panelDispName")
   panelDispName: string;
 
+  slideConfig;
   showPanel: boolean = false;
   thumbnailFolderName: string;
   thumbnail: string;
   galleryName: string;
+  thumbnails: string[] = [];
 
   constructor(
     private fileLoaderService: FileLoaderService,
@@ -26,6 +28,14 @@ export class SubcatalogueComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.slideConfig = {
+      // slidesToShow: 1,
+      // slidesToScroll: 4,
+      autoplay: false,
+      draggable: true,
+      autoplaySpeed: 2000
+    };
+
     if (this.panel) {
       this.dataStoreService.setFiles(this.panel, this.gallery);
       for (let galleryObj of this.gallery) {
@@ -38,6 +48,7 @@ export class SubcatalogueComponent implements OnInit {
       this.fileLoaderService
         .getFilesTree(this.panel, this.thumbnailFolderName)
         .subscribe(files => {
+          this.thumbnails = files;
           this.thumbnail = files[0];
           console.log("thumbnails " + this.thumbnail);
           if (this.thumbnail) {
@@ -45,5 +56,9 @@ export class SubcatalogueComponent implements OnInit {
           }
         });
     }
+  }
+
+  afterChange(e) {
+    console.log("afterChange");
   }
 }

@@ -1,3 +1,5 @@
 .background {
+  position: absolute;
+  width: 100%;
   background-image: radial-gradient(grey -81%, black 100%);
 }

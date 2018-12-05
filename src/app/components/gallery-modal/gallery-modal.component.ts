@@ -5,7 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
   selector: "app-gallery-modal",
   templateUrl: "./gallery-modal.component.html",
   styleUrls: ["./gallery-modal.component.scss"],
-  encapsulation: ViewEncapsulation.None 
+  encapsulation: ViewEncapsulation.None
 })
 export class GalleryModalComponent implements OnInit {
   image: string;
@@ -19,7 +19,6 @@ export class GalleryModalComponent implements OnInit {
     this.imageArray = data.imageArray;
     this.index = data.selectedImageIndex;
     this.image = this.imageArray[this.index];
-    console.log("image to show in modal " + this.image);
   }
 
   onNoClick(): void {

@@ -1,4 +1,4 @@
-.nav-wrapper {
+/* .nav-wrapper {
   background-color: black !important;
   font-size: 14px;
   font-weight: bold;
@@ -26,4 +26,58 @@ a {
 :host ::ng-deep .dropdown-item:hover {
   background: #0435e852;
   top: -9px;
+} */
+
+.mat-toolbar-container {
+  position: fixed;
+  z-index: 999;
+  height: 80px;
+  background: black;
+  padding: 0 113px;
+}
+
+.header-title {
+  margin-bottom: -6px !important;
+  font-size: 2.05rem !important;
+  margin-top: 7px !important;
+}
+
+.header-subtitle {
+  width: 234px;
+  text-align: -webkit-center;
+  letter-spacing: 11.9px;
+  color: #9e9d9d;
+  margin-bottom: 14px !important;
+}
+
+.dropdown-btn {
+  letter-spacing: 2px;
+  color: white;
+  text-align: justify !important;
+  font-weight: 300 !important;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-menu-panel {
+  background: #313030;
+}
+
+.mat-menu-item:hover {
+  background: #0435e852 !important;
+}
+
+.mat-menu-item {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+button:focus {
+  outline: none;
 }

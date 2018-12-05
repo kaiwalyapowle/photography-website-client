@@ -1,3 +1,7 @@
+.userview-container {
+  padding-top: 80px;
+}
+
 .background {
   background-image: radial-gradient(grey -81%, black 100%);
 }
