@@ -13,15 +13,18 @@
   </div>
 -->
 <div class="div-frame">
-  <!-- <a
-    [routerLink]="['/gallery', panel]"
-    [queryParams]="{ isTree: true }"
-    routerLinkActive="active"
-  >
-    <img src="{{ thumbnail }}" alt="" width="100%" class="image" />
-  </a> -->
+  <!--
+    <a
+      [routerLink]="['/gallery', panel]"
+      [queryParams]="{ isTree: true }"
+      routerLinkActive="active"
+    >
+      <img src="{{ thumbnail }}" alt="" width="100%" class="image" />
+    </a>
+  -->
 
   <ngx-slick
+    style="height: 221px;"
     class="carousel"
     #slickModal="slick-modal"
     [config]="slideConfig"
@@ -31,12 +34,12 @@
       ngxSlickItem
       *ngFor="let thumbnail of thumbnails"
       class="slide container"
+      (mouseenter)="slickModal.slickNext()"
     >
       <a
         [routerLink]="['/gallery', panel]"
         [queryParams]="{ isTree: true }"
         routerLinkActive="active"
-        (mouseenter)="slickModal.slickNext()"
       >
         <img src="{{ thumbnail }}" alt="" width="100%" class="image" />
       </a>

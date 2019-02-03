@@ -13,3 +13,18 @@
   background: transparent;
   box-shadow: none;
 }
+
+.dialog-backdrop {
+  background: black;
+}
+
+.slideshow {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.disable-slideshow {
+  pointer-events: none;
+  color: gray;
+}

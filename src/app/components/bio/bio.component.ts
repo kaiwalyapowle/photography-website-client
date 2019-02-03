@@ -72,4 +72,10 @@ export class BioComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  protectImg(e) {
+    if (e.button == 2) {
+      return false
+    }
+  }
 }

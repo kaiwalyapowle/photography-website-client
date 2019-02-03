@@ -1,41 +1,65 @@
 <mat-toolbar class="mat-toolbar-container">
-    <mat-toolbar-row>
-        <span><a href="#">
-                <h1 class="header-title">SAEE
-                    BHURKE</h1>
-            </a>
-        </span>
-        <span class="spacer"></span>
-        <mdb-icon icon="facebook" size="1x" class="white-text mr-sm-1 mr-1 example-icon"></mdb-icon>
-        <mdb-icon icon="instagram" size="1x" class="white-text mr-sm-1 mr-1 example-icon"></mdb-icon>
-        <mdb-icon icon="twitter" size="1x" class="white-text mr-sm-1 mr-1 example-icon"></mdb-icon>
-    </mat-toolbar-row>
+  <mat-toolbar-row>
+    <span
+      ><a routerLink="/"> <h1 class="header-title">SAEE BHURKE</h1> </a>
+    </span>
+    <span class="spacer"></span>
+    <mdb-icon
+      icon="facebook"
+      size="1x"
+      class="white-text mr-sm-1 mr-1 example-icon"
+    ></mdb-icon>
 
-    <mat-toolbar-row>
-        <span>
-            <a href="#">
-                <h5 class="header-subtitle">Photography</h5>
-            </a>
-        </span>
-        <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="navMenu">
+      <mdb-icon
+        icon="instagram"
+        size="1x"
+        class="white-text mr-sm-1 mr-1 example-icon icon-insta"
+      ></mdb-icon>
+    </button>
+    <mat-menu #navMenu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
 
-        <button mat-button class="dropdown-btn" [matMenuTriggerFor]="about">ABOUT</button><span class="caret"></span>
-        <mat-menu #about="matMenu" [overlapTrigger]="false" yPosition="above">
-            <button mat-menu-item>BIO</button>
-            <button mat-menu-item>BEHIND THE LENS</button>
-            <button mat-menu-item>ACHIEVEMENTS</button>
-            <button mat-menu-item>ASSOCIATIONS</button>
-            <button mat-menu-item>CLIENTS</button>
-        </mat-menu>
+    <mdb-icon
+      icon="twitter"
+      size="1x"
+      class="white-text mr-sm-1 mr-1 example-icon"
+    ></mdb-icon>
+    <mdb-icon
+      icon="youtube-play"
+      size="1x"
+      class="white-text mr-sm-1 mr-1 example-icon"
+    ></mdb-icon>
+  </mat-toolbar-row>
 
-        <button mat-button class="dropdown-btn" [matMenuTriggerFor]="showcase">SHOWCASE</button><span class="caret"></span>
-        <mat-menu #showcase="matMenu" [overlapTrigger]="false" yPosition="above">
-            <button mat-menu-item>NATURAL HISTORY & TRAVEL</button>
-            <button mat-menu-item>PHOTOGRAPHY SERVICES</button>
-            <button mat-menu-item>FILMS</button>
-            <button mat-menu-item>BLOGS</button>
-        </mat-menu>
+  <mat-toolbar-row>
+    <span>
+      <a routerLink="/"> <h5 class="header-subtitle">Photography</h5> </a>
+    </span>
+    <span class="spacer"></span>
 
-        <button mat-button class="dropdown-btn">CONTACT</button>
-    </mat-toolbar-row>
+    <button mat-button class="dropdown-btn" [matMenuTriggerFor]="about">
+      ABOUT</button
+    ><span class="caret"></span>
+    <mat-menu #about="matMenu" [overlapTrigger]="false" yPosition="above">
+      <button mat-menu-item>BIO</button>
+      <button mat-menu-item>BEHIND THE LENS</button>
+      <button mat-menu-item>ACHIEVEMENTS</button>
+      <button mat-menu-item>ASSOCIATIONS</button>
+      <button mat-menu-item>CLIENTS</button>
+    </mat-menu>
+
+    <button mat-button class="dropdown-btn" [matMenuTriggerFor]="showcase">
+      SHOWCASE</button
+    ><span class="caret"></span>
+    <mat-menu #showcase="matMenu" [overlapTrigger]="false" yPosition="above">
+      <button mat-menu-item>NATURAL HISTORY & TRAVEL</button>
+      <button mat-menu-item>PHOTOGRAPHY SERVICES</button>
+      <button mat-menu-item>FILMS</button> <button mat-menu-item>BLOGS</button>
+    </mat-menu>
+
+    <button mat-button class="dropdown-btn">CONTACT</button>
+  </mat-toolbar-row>
 </mat-toolbar>

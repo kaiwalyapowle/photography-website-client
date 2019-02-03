@@ -1,9 +1,23 @@
 <div mat-dialog-content>
-  <i style="cursor:pointer" class="material-icons slick-arrow-custom slick-prev-custom" (click)="arrowClickedEvent('prev')">
+  <i
+    style="cursor:pointer"
+    class="material-icons slick-arrow-custom slick-prev-custom"
+    (click)="arrowClickedEvent('prev')"
+  >
     keyboard_arrow_left
   </i>
-  <img src="{{image}}" alt="" class="img-dimensions">
-  <i style="cursor:pointer" class="material-icons slick-arrow-custom slick-next-custom" (click)="arrowClickedEvent('next')">
+  <img src="{{ image }}" alt="" class="img-dimensions" />
+  <i
+    style="cursor:pointer"
+    class="material-icons slick-arrow-custom slick-next-custom"
+    (click)="arrowClickedEvent('next')"
+  >
     keyboard_arrow_right
   </i>
+  <i
+    class="fa fa-film slideshow"
+    [ngClass]="{ 'disable-slideshow': slideshowClicked }"
+    aria-hidden="true"
+    (click)="beginSlideshow()"
+  ></i>
 </div>

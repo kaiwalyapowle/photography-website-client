@@ -61,6 +61,15 @@ a {
   padding: 0 14px;
 }
 
+/* below style to bring down drop down menu of insta id list */
+.cdk-overlay-connected-position-bounding-box {
+  top: 40px !important;
+}
+
+.icon-insta {
+  font-size: 20px;
+}
+
 .spacer {
   flex: 1 1 auto;
 }

@@ -13,6 +13,7 @@ import { GalleryModalComponent } from "../gallery-modal/gallery-modal.component"
   styleUrls: ["./gallery.component.scss"]
 })
 export class GalleryComponent implements OnInit {
+  catalogueContents = [];
   constructor(
     private route: ActivatedRoute,
     private dataStoreService: DataStoreService,
@@ -34,6 +35,12 @@ export class GalleryComponent implements OnInit {
       this.galleryNamesOrImages_isTree = this.dataStoreService.getFiles(
         this.panelName
       );
+
+      if (!this.galleryNamesOrImages_isTree) {
+        this.galleryNamesOrImages_isTree = this.dataStoreService.getGalleryNames(
+          this.panelName
+        );
+      }
     });
 
     this.route.queryParams.subscribe(paramsObj => {
@@ -115,7 +122,7 @@ export class GalleryComponent implements OnInit {
     const dialogRef = this.dialog.open(GalleryModalComponent, {
       height: "600px",
       hasBackdrop: true,
-
+      maxWidth: "fit-content",
       data: { title: "", imageArray: imageArray, selectedImageIndex: index },
       backdropClass: "dialog-backdrop"
     });
